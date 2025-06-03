@@ -21,24 +21,22 @@
       align-items: center;
       padding: 12px 24px;
       gap: 10px;
+      background-color: white;
       position: sticky;
       top: 0;
-      background-color: white;
-      z-index: 1000;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      z-index: 10;
     }
     .logo-header {
       width: 92px;
-      flex-shrink: 0;
     }
     .search-bar-container {
       flex: 1;
-      max-width: 720px;
-      margin-left: 40px;
       position: relative;
+      margin-left: 40px;
     }
     .search-bar {
       width: 100%;
+      max-width: 720px;
       padding: 10px 50px 10px 20px;
       font-size: 16px;
       color: #202124;
@@ -53,29 +51,28 @@
     .icons {
       position: absolute;
       top: 50%;
-      right: 15px;
+      right: 20px;
       transform: translateY(-50%);
       display: flex;
-      gap: 12px;
+      gap: 8px;
     }
     .icons img {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       opacity: 0.8;
       cursor: pointer;
     }
-    .header-buttons {
+    .header-right {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-left: auto;
     }
-    .settings-icon img {
+    .settings-icon, .apps-icon {
       width: 24px;
       height: 24px;
       cursor: pointer;
     }
-    .sign-in {
+    .signin-button {
       background-color: #1a73e8;
       color: white;
       border: none;
@@ -92,10 +89,10 @@
       color: #5f6368;
       border-bottom: 1px solid #dadce0;
       align-items: center;
-      position: sticky;
-      top: 66px;
       background-color: white;
-      z-index: 999;
+      position: sticky;
+      top: 64px;
+      z-index: 9;
     }
     nav .tab {
       padding: 14px 0;
@@ -115,9 +112,9 @@
       background-color: #1a73e8;
     }
     .search-results {
-      max-width: 652px;
-      margin: 20px auto;
-      padding: 0 16px 100px;
+      max-width: 900px;
+      margin: 20px 0 100px 150px;
+      padding: 0 16px;
     }
     .result {
       margin-bottom: 40px;
@@ -147,11 +144,10 @@
         <img src="https://www.gstatic.com/images/icons/material/system/1x/keyboard_black_24dp.png" alt="Keyboard">
       </div>
     </div>
-    <div class="header-buttons">
-      <div class="settings-icon">
-        <img src="https://www.gstatic.com/images/icons/material/system/1x/settings_black_24dp.png" alt="Settings">
-      </div>
-      <button class="sign-in">Sign in</button>
+    <div class="header-right">
+      <img src="https://www.gstatic.com/images/icons/material/system/1x/apps_black_24dp.png" alt="Apps" class="apps-icon">
+      <img src="https://www.gstatic.com/images/icons/material/system/1x/settings_black_24dp.png" alt="Settings" class="settings-icon">
+      <button class="signin-button">Sign in</button>
     </div>
   </header>
 
@@ -164,7 +160,7 @@
   </nav>
 
   <div class="search-results">
-    <h2 style="font-size: 18px; color: #5f6368; font-weight: normal; margin: 60px 0 20px;">1. Speaking</h2>
+<h2 style="font-size: 18px; color: #5f6368; font-weight: normal; margin: 60px 0 20px;">1. Speaking</h2>
 <div class="result"><div class="url">www.teachingtasks.com › speaking</div><a href="#" class="title">1. Picture Description</a><div class="description">Stage: Warming Up | Class: 5<br>Objective: Activate speaking.<br>Task: Describe image in pairs.<br>Tool: Pictures from textbook</div></div>
 <div class="result"><div class="url">www.teachingtasks.com › speaking</div><a href="#" class="title">2. Role-play Dialogues</a><div class="description">Stage: Practice | Class: 7<br>Objective: Practice fluency.<br>Task: Act out situations.<br>Tool: Custom role cards</div></div>
 <div class="result"><div class="url">www.teachingtasks.com › speaking</div><a href="#" class="title">3. Interview Chain</a><div class="description">Stage: Practice | Class: 8<br>Objective: Ask & answer questions.<br>Task: Interview 3 classmates.<br>Tool: Prepared questions</div></div>
@@ -263,20 +259,19 @@
 <div class="result"><div class="url">www.teachingtasks.com › productive</div><a href="#" class="title">3. Language Exchange</a><div class="description">Stage: Practice<br>Class: 10<br>Objective: Practice with natives.<br>Task: Hold conversation.<br>Tool: HelloTalk</div></div>
 <div class="result"><div class="url">www.teachingtasks.com › productive</div><a href="#" class="title">4. Self-Assessment Recording</a><div class="description">Stage: Practice<br>Class: 7<br>Objective: Analyze pronunciation.<br>Task: Record and listen.<br>Tool: Vocaroo</div></div>
 <div class="result"><div class="url">www.teachingtasks.com › productive</div><a href="#" class="title">5. Speech Challenges</a><div class="description">Stage: Production<br>Class: 11<br>Objective: Public speaking.<br>Task: Timed speech.<br>Tool: SpeakUp or Oratory Skills</div></div>
-
   </div>
 
-  <script>
-    const searchInput = document.getElementById('search');
-    const tasks = document.querySelectorAll('.result');
+<script>
+  const searchInput = document.getElementById('search');
+  const tasks = document.querySelectorAll('.result');
 
-    searchInput.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      tasks.forEach(task => {
-        const text = task.textContent.toLowerCase();
-        task.style.display = text.includes(term) ? 'block' : 'none';
-      });
+  searchInput.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase();
+    tasks.forEach(task => {
+      const text = task.textContent.toLowerCase();
+      task.style.display = text.includes(term) ? 'block' : 'none';
     });
-  </script>
+  });
+</script>
 </body>
 </html>
