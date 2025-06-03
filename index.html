@@ -1,542 +1,322 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teaching Tasks</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google</title>
+  <link rel="icon" href="https://www.google.com/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #202124;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 12px 24px;
+      gap: 10px;
+    }
+    .logo-header {
+      width: 92px;
+    }
+    .search-bar-container {
+      flex: 1;
+      position: relative;
+    }
+    .search-bar {
+      width: 100%;
+      max-width: 720px;
+      padding: 10px 50px 10px 20px;
+      font-size: 16px;
+      color: #202124;
+      background-color: #f1f3f4;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      outline: none;
+    }
+    .search-bar::placeholder {
+      color: #5f6368;
+    }
+    .icons {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    .icons img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    nav {
+      padding: 0 24px;
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
+      color: #5f6368;
+      border-bottom: 1px solid #dadce0;
+      align-items: center;
+    }
+    nav .tab {
+      padding: 14px 0;
+      cursor: pointer;
+      position: relative;
+    }
+    nav .tab.active {
+      color: #1a73e8;
+    }
+    nav .tab.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #1a73e8;
+    }
+    .search-results {
+      max-width: 652px;
+      margin: 20px auto;
+      padding: 0 16px 100px;
+    }
+    .result {
+      margin-bottom: 40px;
+    }
+    .url {
+      font-size: 14px;
+      color: #202124;
+    }
+    .title {
+      font-size: 20px;
+      color: #1a0dab;
+      text-decoration: none;
+    }
+    .title:hover {
+      text-decoration: underline;
+    }
+    .description {
+      font-size: 14px;
+      color: #4d5156;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <div class="max-w-4xl mx-auto py-10 px-4">
-    <h1 class="text-3xl font-bold mb-6">English Teaching Activities</h1>
-
-    <input id="search" type="text" placeholder="Search tasks..." class="w-full px-4 py-2 text-black rounded mb-6" />
-
-    <div id="tasks" class="space-y-6 whitespace-pre-wrap">
-      <div class="task">
-        <h2 class="text-xl font-semibold">1. British Pronunciation (10 Activities)</h2>
-        <p>1. Phoneme Recognition with Interactive Phonemic Chart
-- Stage: Presentation
-- Class: 3
-- Objective: Identify and articulate British English phonemes.
-- Task: Listen to and repeat each sound.
-- Instruction: "Use the interactive phonemic chart to listen to each phoneme and repeat after it."
-- Tool: starfall.com</p>
-
-        <p>2. Shadowing with YouTube Videos
-- Stage: Practice
-- Class: 7
-- Objective: Mimic native speakers.
-- Task: Watch and repeat sentences.
-- Instruction: "Watch the selected YouTube video and repeat each sentence."
-- Tool: YouTube</p>
-
-        <p>3. Pronunciation Drills with Language Learning Apps
-- Stage: Practice
-- Class: 5
-- Objective: Practice specific sounds.
-- Task: Complete pronunciation drills.
-- Instruction: "Use the app to practice the highlighted sounds."
-- Tool: Duolingo or Babbel</p>
-
-        <p>4. Recording and Self-Assessment with Voice Recorder Apps
-- Stage: Production
-- Class: 8
-- Objective: Evaluate pronunciation.
-- Task: Record and compare.
-- Instruction: "Record yourself and compare to a native version."
-- Tool: Vocaroo</p>
-
-        <p>5. Minimal Pairs Practice with Flashcard Apps
-- Stage: Practice
-- Class: 8
-- Objective: Distinguish similar sounds.
-- Task: Practice minimal pairs.
-- Instruction: "Use the flashcard app to focus on differences."
-- Tool: Quizlet</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">2. Vocabulary (5 Activities)</h2>
-        <p>1. Animal Vocabulary
-- Stage: Practice
-- Class: 4
-- Objective: Learn animals & spelling.
-- Task: Spell out names in game.
-- Tool: ABCya</p>
-
-        <p>2. Household Objects
-- Stage: Practice
-- Class: 5
-- Objective: Enhance memory.
-- Task: Match items with names.
-- Tool: Wordwall</p>
-
-        <p>3. Fruits and Vegetables
-- Stage: Practice
-- Class: 4
-- Objective: Expand vocabulary.
-- Task: Watch, record names.
-- Tool: YouTube Kids, Vocaroo</p>
-
-        <p>4. Weather Vocabulary
-- Stage: Practice
-- Class: 9
-- Objective: Comprehension.
-- Task: Listen to forecast, comment.
-- Tool: Padlet</p>
-
-        <p>5. Personality Adjectives
-- Stage: Practice
-- Class: 7
-- Objective: Vocabulary retention.
-- Task: Complete crossword.
-- Tool: Educaplay</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">3. Grammar (5 Activities)</h2>
-        <p>1. Past Simple vs. Present Perfect Intro
-- Stage: Warming Up
-- Class: 9
-- Objective: Understand usage.
-- Task: Find 5 examples each.
-- Tool: BNC</p>
-
-        <p>2. Grammar Wheel Game
-- Stage: Practice
-- Class: 8
-- Objective: Form sentences.
-- Task: Spin wheel, create two sentences.
-- Tool: WheelDecide</p>
-
-        <p>3. Flashcard Matching
-- Stage: Practice
-- Class: 9
-- Objective: Reinforce tenses.
-- Task: Match cards to tense.
-- Tool: Quizlet</p>
-
-        <p>4. Grammar Quiz
-- Stage: Assessment
-- Class: 10
-- Objective: Assess understanding.
-- Task: Kahoot multiple choice.
-- Tool: Kahoot!</p>
-
-        <p>5. Google Forms Test
-- Stage: Assessment
-- Class: 9
-- Objective: Test knowledge.
-- Task: Fill in blanks.
-- Tool: Google Forms</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">4. Listening (5 Activities)</h2>
-        <p>1. Online Audio Clips
-- Stage: Presentation
-- Class: 8
-- Objective: Understand accents.
-- Task: Answer comprehension questions.
-- Tool: Loom</p>
-
-        <p>2. Podcast Listening
-- Stage: Practice
-- Class: 8
-- Objective: Comprehension & discussion.
-- Task: Prepare to discuss.
-- Tool: BBC Learning English</p>
-
-        <p>3. Dictation Practice
-- Stage: Practice
-- Class: 5
-- Objective: Transcribe English.
-- Task: Type dictated passage.
-- Tool: English Club</p>
-
-        <p>4. Listening Games
-- Stage: Practice
-- Class: 7
-- Objective: Improve listening.
-- Task: Play listening game.
-- Tool: ESL Cyber Lab</p>
-
-        <p>5. Video Comprehension
-- Stage: Presentation
-- Class: 8
-- Objective: Context listening.
-- Task: Watch video, quiz.
-- Tool: TED-Ed</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">5. Oral Presentation Speech (5 Activities)</h2>
-        <p>1. Warm-Up
-- Stage: Warming Up
-- Class: 6
-- Objective: Casual speaking.
-- Task: Talk about hobbies.
-- Tool: HelloTalk</p>
-
-        <p>2. Goal Setting
-- Stage: Setting Goals
-- Class: 8
-- Objective: Define speaking targets.
-- Task: Set two weekly goals.
-- Tool: LearnEnglish Daily</p>
-
-        <p>3. Screencast Presentation
-- Stage: Presentation
-- Class: 10
-- Objective: Present with fluency.
-- Task: Record short talk.
-- Tool: Screencastify</p>
-
-        <p>4. Speak English Conversation
-- Stage: Practice
-- Class: 9
-- Objective: Role-play.
-- Task: Dialogue scenarios.
-- Tool: Speak English Conversation</p>
-
-        <p>5. Awabe Conversation
-- Stage: Production
-- Class: 8
-- Objective: Spontaneous talk.
-- Task: Talk about an experience.
-- Tool: Awabe</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">6. Reading Comprehension (5 Activities)</h2>
-        <p>1. Interactive E-books
-- Stage: Practice
-- Class: 9
-- Objective: Improve comprehension.
-- Task: Answer questions.
-- Tool: Kindle or similar</p>
-
-        <p>2. Annotating Texts
-- Stage: Practice
-- Class: 10
-- Objective: Highlight & note.
-- Task: Use annotation tools.
-- Tool: News in Levels</p>
-
-        <p>3. Online Articles
-- Stage: Practice
-- Class: 10
-- Objective: Summarizing.
-- Task: Write a summary.
-- Tool: Newsela</p>
-
-        <p>4. Vocabulary via Reading
-- Stage: Practice
-- Class: 10
-- Objective: Enhance vocabulary.
-- Task: Complete exercises.
-- Tool: Quizlet or Vocabulary.com</p>
-
-        <p>5. Comprehension Quizzes
-- Stage: Practice
-- Class: 8
-- Objective: Test reading.
-- Task: Take quiz.
-- Tool: Google Forms</p>
+<body>
+  <header>
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" alt="Google" class="logo-header">
+    <div class="search-bar-container">
+      <input id="search" type="text" class="search-bar" placeholder="Search" />
+      <div class="icons">
+        <img src="https://www.gstatic.com/images/icons/material/system/1x/mic_black_24dp.png" alt="Voice Search">
+        <img src="https://www.gstatic.com/images/icons/material/system/1x/image_black_24dp.png" alt="Image Search">
+        <img src="https://www.gstatic.com/images/icons/material/system/1x/keyboard_black_24dp.png" alt="Keyboard">
       </div>
     </div>
+  </header>
 
-      <div class="task">
-        <h2 class="text-xl font-semibold">7. Conversation Skills (5 Activities)</h2>
-        <p>1. Role-Playing with VR
-- Stage: Practice
-- Class: 9
-- Objective: Improve conversational skills in immersive scenarios.
-- Task: Role-play with VR.
-- Tool: Mondly VR</p>
+  <nav>
+    <div class="tab active">All</div>
+    <div class="tab">Images</div>
+    <div class="tab">Videos</div>
+    <div class="tab">News</div>
+    <div class="tab">More</div>
+  </nav>
 
-        <p>2. Real-Time Conversations
-- Stage: Practice
-- Class: 10
-- Objective: Practice speaking with native speakers.
-- Task: Language exchange on a given topic.
-- Tool: HelloTalk</p>
+  <div id="tasks" class="search-results">
+    <!-- Restored teaching tasks -->
+    <div class="result">
+      <div class="url">www.teachingtasks.com › grammar</div>
+      <a href="#" class="title">3. Grammar (5 Activities)</a>
+      <div class="description">1. Introduction to Past Simple vs. Present Perfect
+Stage: Warming Up | Class: 9
+Objective: Understand usage of tenses.
+Task: Find 5 examples each in BNC.
+Tool: British National Corpus
+...
+(4 more activities)</div>
+    </div>
 
-        <p>3. AI Chatbot Conversations
-- Stage: Practice
-- Class: 9
-- Objective: Practice everyday dialogues.
-- Task: Respond to AI prompts.
-- Tool: Replika or Google Assistant</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › listening</div>
+      <a href="#" class="title">4. Listening Skills (5 Activities)</a>
+      <div class="description">1. Interactive Listening with Online Audio Clips
+Stage: Presentation | Class: 8
+Objective: Understand various accents.
+Task: Answer comprehension questions.
+Tool: Loom
+...
+(4 more activities)</div>
+    </div>
 
-        <p>4. Online Language Platform Dialogues
-- Stage: Practice
-- Class: 8
-- Objective: Structured conversation.
-- Task: Complete interactive exercises.
-- Tool: Duolingo or Babbel</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › oral-presentation</div>
+      <a href="#" class="title">5. Oral Presentation Speech (5 Activities)</a>
+      <div class="description">1. Warm-Up with HelloTalk
+Stage: Warming Up | Class: 6
+Objective: Engage in casual conversation.
+Task: Talk about hobbies via HelloTalk.
+Tool: HelloTalk
+...
+(4 more activities)</div>
+    </div>
 
-        <p>5. Group Discussions Online
-- Stage: Production
-- Class: 9
-- Objective: Improve group conversation.
-- Task: Participate in video-based discussion.
-- Tool: Zoom or Microsoft Teams</p>
-      </div>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › reading</div>
+      <a href="#" class="title">6. Reading Comprehension (5 Activities)</a>
+      <div class="description">1. Interactive Reading with E-books
+Stage: Practice | Class: 9
+Objective: Improve comprehension.
+Task: Complete interactive questions.
+Tool: Kindle or other platform
+...
+(4 more activities)</div>
+    </div>
 
-      <div class="task">
-        <h2 class="text-xl font-semibold">8. Reading Aloud (5 Activities)</h2>
-        <p>1. Voice Recording
-- Stage: Practice
-- Class: 8
-- Objective: Self-evaluate reading.
-- Task: Record and playback.
-- Tool: Vocaroo</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › conversation</div>
+      <a href="#" class="title">7. Conversation Skills (5 Activities)</a>
+      <div class="description">1. Role-Playing with VR
+Stage: Practice | Class: 9
+Objective: Improve conversation through VR.
+Task: Role-play scenario.
+Tool: Mondly VR
+...
+(4 more activities)</div>
+    </div>
 
-        <p>2. E-book Read-Alouds
-- Stage: Presentation
-- Class: 9
-- Objective: Improve fluency.
-- Task: Read with interactive support.
-- Tool: Kindle</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › reading-aloud</div>
+      <a href="#" class="title">8. Reading Aloud (5 Activities)</a>
+      <div class="description">1. Recording and Playback
+Stage: Practice | Class: 8
+Objective: Improve fluency.
+Task: Record and listen.
+Tool: Vocaroo
+...
+(4 more activities)</div>
+    </div>
 
-        <p>3. Speech Recognition Feedback
-- Stage: Practice
-- Class: 8
-- Objective: Get pronunciation feedback.
-- Task: Read and review.
-- Tool: Google Speech-to-Text</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › spelling</div>
+      <a href="#" class="title">9. Spelling Skills (6 Activities)</a>
+      <div class="description">1. Interactive Spelling Quizzes
+Stage: Practice
+Objective: Improve accuracy.
+Task: Take quiz.
+Tool: Quizlet or SpellingCity
+...
+(5 more activities)</div>
+    </div>
 
-        <p>4. Reading via Video Conferencing
-- Stage: Production
-- Class: 9
-- Objective: Build confidence.
-- Task: Read aloud to peers.
-- Tool: Zoom or Teams</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › creative-writing</div>
+      <a href="#" class="title">10. Creative Writing (5 Activities)</a>
+      <div class="description">1. Collaborative Story in Google Docs
+Stage: Practice
+Objective: Write together.
+Task: Group story writing.
+Tool: Google Docs
+...
+(4 more activities)</div>
+    </div>
 
-        <p>5. Create Audiobooks
-- Stage: Practice
-- Class: 9
-- Objective: Combine reading and production.
-- Task: Record favorite story.
-- Tool: Audacity or GarageBand</p>
-      </div>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › collaboration</div>
+      <a href="#" class="title">11. Collaboration Skills (5 Activities)</a>
+      <div class="description">1. Project Management with Meetingwords
+Stage: Practice
+Objective: Track progress collaboratively.
+Task: Use shared planner.
+Tool: Meetingwords
+...
+(4 more activities)</div>
+    </div>
 
-      <div class="task">
-        <h2 class="text-xl font-semibold">9. Spelling Skills (6 Activities)</h2>
-        <p>1. Spelling Quizzes
-- Stage: Practice
-- Objective: Improve accuracy.
-- Task: Complete interactive quiz.
-- Tool: Quizlet or SpellingCity</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › fl-lesson-stages</div>
+      <a href="#" class="title">12. FL Class Stages (5 Activities)</a>
+      <div class="description">1. Vocabulary Flashcards
+Stage: Presentation
+Objective: Learn new words.
+Task: Use flashcards.
+Tool: Quizlet
+...
+(4 more activities)</div>
+    </div>
 
-        <p>2. Educational Spelling Games
-- Stage: Practice
-- Objective: Gamified learning.
-- Task: Play spelling games.
-- Tool: ABCmouse or Kahoot!</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › receptive-skills</div>
+      <a href="#" class="title">13. Receptive Skills (5 Activities)</a>
+      <div class="description">1. Podcasts & Notes
+Stage: While-listening
+Objective: Comprehension and discussion.
+Task: Take notes, discuss.
+Tool: Spotify
+...
+(4 more activities)</div>
+    </div>
 
-        <p>3. Online Spelling Bees
-- Stage: Production
-- Objective: Practice under pressure.
-- Task: Spell words aloud.
-- Tool: Zoom or Microsoft Teams</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › productive-skills-more</div>
+      <a href="#" class="title">14. Productive Skills (5 Activities)</a>
+      <div class="description">1. Online Speaking Forums
+Stage: Practice | Class: 9
+Objective: Improve speaking.
+Task: Forum discussion.
+Tool: Flipgrid or Padlet
+...
+(4 more activities)</div>
+    </div>
 
-        <p>4. Voice Recognition Practice
-- Stage: Practice
-- Objective: Practice aloud.
-- Task: Spell words using voice input.
-- Tool: Google Speech-to-Text</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › pronunciation</div>
+      <a href="#" class="title">1. British Pronunciation (10 Activities)</a>
+      <div class="description">1. Phoneme Recognition with Interactive Phonemic Chart
+Stage: Presentation | Class: 3
+Objective: Identify and articulate British English phonemes.
+Task: Listen and repeat sounds.
+Tool: starfall.com
+...
+(9 more activities)</div>
+    </div>
 
-        <p>5. LMS Spelling Lists
-- Stage: Practice
-- Objective: Work on customized lists.
-- Task: Complete LMS exercises.
-- Tool: Google Classroom or Moodle</p>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › vocabulary</div>
+      <a href="#" class="title">2. Vocabulary (5 Activities)</a>
+      <div class="description">1. Animal Vocabulary
+Stage: Practice | Class: 4
+Objective: Learn animals & spelling.
+Task: Spell in game.
+Tool: ABCya
+...
+(4 more activities)</div>
+    </div>
 
-        <p>6. Flashcard Review
-- Stage: Practice
-- Objective: Reinforce through repetition.
-- Task: Use digital flashcards.
-- Tool: Anki or Quizlet</p>
-      </div>
+    <div class="result">
+      <div class="url">www.teachingtasks.com › productive-skills</div>
+      <a href="#" class="title">14. Productive Skills (5 Activities)</a>
+      <div class="description">1. Online Speaking Forums
+Stage: Practice | Class: 9
+Objective: Improve fluency.
+Task: Forum discussion.
+Tool: Flipgrid or Padlet
+...
+(4 more activities)</div>
+    </div>
+  </div>
 
-      <div class="task">
-        <h2 class="text-xl font-semibold">10. Creative Writing (5 Activities)</h2>
-        <p>1. Google Docs Collaboration
-- Stage: Practice
-- Objective: Co-write a story.
-- Task: Write in shared doc.
-- Tool: Google Docs</p>
-
-        <p>2. Story Maps
-- Stage: Presentation
-- Objective: Plan structure.
-- Task: Create event map.
-- Tool: MindMeister</p>
-
-        <p>3. Prompt Generators
-- Stage: Practice
-- Objective: Generate story ideas.
-- Task: Write story from prompt.
-- Tool: Writing Prompts app</p>
-
-        <p>4. Multimedia Story Platforms
-- Stage: Production
-- Objective: Use media in stories.
-- Task: Create multimedia piece.
-- Tool: Adobe Spark or Storybird</p>
-
-        <p>5. Writing Exercises in Apps
-- Stage: Practice
-- Objective: Targeted writing practice.
-- Task: Complete exercises.
-- Tool: ProWritingAid</p>
-      </div>
-</div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">11. Collaboration Skills (5 Activities)</h2>
-        <p>1. Project Management with Meetingwords
-- Stage: Practice
-- Objective: Manage group projects.
-- Task: Plan and track with a shared board.
-- Tool: Meetingwords</p>
-
-        <p>2. Google Workspace Collaboration
-- Stage: Practice
-- Objective: Collaborate in real time.
-- Task: Write and edit documents together.
-- Tool: Google Docs</p>
-
-        <p>3. Brainstorming with Miro
-- Stage: Presentation
-- Objective: Organize group ideas.
-- Task: Create mind maps and sticky notes.
-- Tool: Miro</p>
-
-        <p>4. Peer Feedback with Vocaroo
-- Stage: Practice
-- Objective: Give constructive feedback.
-- Task: Upload drafts and review peers.
-- Tool: Vocaroo</p>
-
-        <p>5. Coding Together with Replit
-- Stage: Practice
-- Objective: Collaboratively write code.
-- Task: Debug and develop as a team.
-- Tool: Replit</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">12. Stages of FL Class (5 Activities)</h2>
-        <p>1. Vocabulary Flashcards
-- Stage: Presentation
-- Objective: Learn new words.
-- Task: Study and listen.
-- Tool: Quizlet</p>
-
-        <p>2. Grammar Practice
-- Stage: Practice
-- Objective: Apply rules.
-- Task: Do grammar exercises.
-- Tool: Duolingo</p>
-
-        <p>3. Listening with Podcasts
-- Stage: Practice
-- Objective: Improve comprehension.
-- Task: Answer questions after listening.
-- Tool: Spotify</p>
-
-        <p>4. Speaking Practice
-- Stage: Practice
-- Objective: Enhance pronunciation.
-- Task: Record and submit.
-- Tool: Vocaroo</p>
-
-        <p>5. Culture via VR
-- Stage: Presentation
-- Objective: Explore culture.
-- Task: Virtual tour + notes.
-- Tool: Google Earth</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">13. Receptive Skills (5 Activities)</h2>
-        <p>1. Podcasts & Discussion
-- Stage: While/After Listening
-- Objective: Listening + critical thinking.
-- Task: Note-taking + discussion.
-- Tool: Spotify, Podomatic</p>
-
-        <p>2. Listening Exercises
-- Stage: While Listening
-- Objective: Match speech with text.
-- Task: Interactive match.
-- Tool: ESL Lab</p>
-
-        <p>3. Subtitled Video
-- Stage: While Listening
-- Objective: Comprehension.
-- Task: Watch & answer.
-- Tool: YouTube/Edpuzzle/Tubequizard</p>
-
-        <p>4. Pre-Reading Pictures
-- Stage: Pre-Reading
-- Objective: Predict context.
-- Task: Guess topic from images.
-- Tool: TeachingKidsNews</p>
-
-        <p>5. Lyrics Listening
-- Stage: While Listening
-- Objective: Listening via music.
-- Task: Fill blanks in lyrics.
-- Tool: LyricsTraining</p>
-      </div>
-
-      <div class="task">
-        <h2 class="text-xl font-semibold">14. Productive Skills (5 Activities)</h2>
-        <p>1. Speaking Forums
-- Stage: Practice
-- Class: 9
-- Objective: Improve fluency.
-- Task: Discuss in forums.
-- Tool: Flipgrid, Padlet</p>
-
-        <p>2. Group Discussions
-- Stage: Practice
-- Class: 8
-- Objective: Collaborate in speech.
-- Task: Breakout room talk.
-- Tool: Zoom or Teams</p>
-
-        <p>3. Language Exchange
-- Stage: Practice
-- Class: 10
-- Objective: Practice with natives.
-- Task: Hold conversation.
-- Tool: HelloTalk</p>
-
-        <p>4. Self-Assessment Recording
-- Stage: Practice
-- Class: 7
-- Objective: Analyze pronunciation.
-- Task: Record and listen.
-- Tool: Vocaroo</p>
-
-        <p>5. Speech Challenges
-- Stage: Production
-- Class: 11
-- Objective: Public speaking.
-- Task: Timed speech.
-- Tool: SpeakUp or Oratory Skills</p>
-      </div>
-</div>
-</div>
-<script>
+  <script>
     const searchInput = document.getElementById('search');
-    const tasks = document.querySelectorAll('.task');
+    const tasks = document.querySelectorAll('.result');
 
     searchInput.addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
